@@ -1,6 +1,6 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
-error_reporting(0);
+error_reporting(0); // 禁止出现警告报错等一些信息，不给用户看，自己可以看
 /**
  * Created by PhpStorm.
  * User: HP
