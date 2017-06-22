@@ -13,7 +13,7 @@ $student_sex = $_POST['student_sex'];
 $student_age = $_POST['student_age'];
 $class_id = $_POST['class_id'];
 
-if(!empty($student_age) && !empty($class_id))
+/*if(!empty($student_age) && !empty($class_id))
 {
     $sql = "INSERT INTO students (student_name, student_sex, student_age, class_id) VALUES ('$student_name', '$student_sex', $student_age, $class_id);";
 }
@@ -28,7 +28,20 @@ else if(empty($student_age) && !empty($class_id))
 else
 {
     $sql = "INSERT INTO students (student_name, student_sex) VALUES ('$student_name', '$student_sex');";
+}*/
+
+// 最简单的解决方案：
+if(empty($student_age))
+{
+    $student_age = 'null';
 }
+if(empty($class_id))
+{
+    $class_id = 'null';
+}
+
+$sql = "INSERT INTO students (student_name, student_sex, student_age, class_id) VALUES ('$student_name', '$student_sex', $student_age, $class_id)";
+
 
 //echo $sql;
 
